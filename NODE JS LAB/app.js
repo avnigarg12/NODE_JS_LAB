@@ -55,16 +55,7 @@ app.post('/event', async (req, res) => {
   }
 });
 
-app.get('/events/:id', async (req, res) => {
-  try {
-    const event = await Event.findById(req.params.id);
-    if (!event) return res.redirect('/events');
-    res.render('events/show', { event });
-  } catch (error) {
-    console.error(error);
-    res.redirect('/events');
-  }
-});
+
 
 app.get('/events/:id/edit', async (req, res) => {
   try {
