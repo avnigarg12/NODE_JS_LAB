@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= event.eventName %></title>
+</head>
+<body>
+  <h1><%= event.eventName %></h1>
+  <p><strong>Location:</strong> <%= event.location %></p>
+  <p><strong>Date:</strong> <%= new Date(event.eventDate).toDateString() %></p>
+  <p><strong>Description:</strong> <%= event.description %></p>
+  <p><strong>Max Participants:</strong> <%= event.maxParticipants %></p>
+  <p>
+    <a href="/events/<%= event._id %>/edit">Edit Event</a> |
+    <a href="/events">Back to events</a>
+  </p>
+  <form action="/events/<%= event._id %>" method="POST" style="margin-top: 1rem;">
+    <input type="hidden" name="_method" value="DELETE" />
+    <button type="submit">Delete Event</button>
+  </form>
+</body>
+</html>

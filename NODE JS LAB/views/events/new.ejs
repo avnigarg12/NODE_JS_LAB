@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Event</title>
+</head>
+<body>
+  <h1>Create Event</h1>
+  <form action="/event" method="POST">
+    <div>
+      <label for="eventName">Event Name</label><br />
+      <input type="text" id="eventName" name="eventName" required />
+    </div>
+    <div>
+      <label for="location">Location</label><br />
+      <input type="text" id="location" name="location" required />
+    </div>
+    <div>
+      <label for="eventDate">Event Date</label><br />
+      <input type="date" id="eventDate" name="eventDate" required />
+    </div>
+    <div>
+      <label for="description">Description</label><br />
+      <textarea id="description" name="description" rows="4" required></textarea>
+    </div>
+    <div>
+      <label for="maxParticipants">Max Participants</label><br />
+      <input type="number" id="maxParticipants" name="maxParticipants" min="1" required />
+    </div>
+    <button type="submit">Create Event</button>
+  </form>
+  <p><a href="/events">Back to events</a></p>
+</body>
+</html>

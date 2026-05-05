@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events</title>
+</head>
+<body>
+  <h1>Events</h1>
+  <p><a href="/event/new">Create New Event</a></p>
+  <% if (events.length === 0) { %>
+    <p>No events found.</p>
+  <% } else { %>
+    <ul>
+      <% events.forEach((event) => { %>
+        <li>
+          <a href="/events/<%= event._id %>"><%= event.eventName %></a>
+          &ndash; <%= event.location %>
+        </li>
+      <% }); %>
+    </ul>
+  <% } %>
+</body>
+</html>
